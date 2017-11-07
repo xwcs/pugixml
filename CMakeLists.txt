@@ -50,6 +50,11 @@ endif()
 set_target_properties(pugixml PROPERTIES VERSION 1.8 SOVERSION 1)
 get_target_property(PUGIXML_VERSION_STRING pugixml VERSION)
 
+SET_TARGET_PROPERTIES( pugixml PROPERTIES
+	OUTPUT_NAME "pugixml"
+	DEBUG_OUTPUT_NAME "pugixmld"
+)
+
 if(BUILD_PKGCONFIG)
 	# Install library into its own directory under LIBDIR
 	set(INSTALL_SUFFIX /pugixml-${PUGIXML_VERSION_STRING})
